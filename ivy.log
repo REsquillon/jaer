@@ -1,0 +1,383 @@
+Buildfile: /home/octo/IdeaProjects/jaer/build.xml
+
+-check-ivy:
+
+-download-ivy:
+
+-load-ivy-tasks:
+
+download-deps:
+[ivy:resolve] :: Apache Ivy 2.4.0 - 20141213170938 :: http://ant.apache.org/ivy/ ::
+[ivy:resolve] :: loading settings :: file = /home/octo/IdeaProjects/jaer/ivysettings.xml
+[ivy:resolve] :: resolving dependencies :: org.jaerproject#jaer;working@manjaro-desktop
+[ivy:resolve] 	confs: [default]
+[ivy:resolve] 	found org.jogamp.gluegen#gluegen-rt;2.3.2 in public
+[ivy:resolve] 	found org.jogamp.gluegen#gluegen-rt-main;2.3.2 in public
+[ivy:resolve] 	found org.jogamp.jogl#jogl-all-main;2.3.2 in public
+[ivy:resolve] 	found org.jogamp.jogl#jogl-all;2.3.2 in public
+[ivy:resolve] 	found org.swinglabs#swing-layout;1.0.3 in public
+[ivy:resolve] 	found org.jdesktop#beansbinding;1.2.1 in public
+[ivy:resolve] 	found com.github.swri-robotics#bag-reader-java;1.10.0 in public
+[ivy:resolve] 	found com.google.guava#guava;18.0 in public
+[ivy:resolve] 	found org.slf4j#slf4j-api;1.7.16 in public
+[ivy:resolve] 	found commons-codec#commons-codec;1.10 in public
+[ivy:resolve] 	found com.fasterxml.jackson.core#jackson-databind;2.6.5 in public
+[ivy:resolve] 	found com.fasterxml.jackson.core#jackson-annotations;2.6.0 in public
+[ivy:resolve] 	found com.fasterxml.jackson.core#jackson-core;2.6.5 in public
+[ivy:resolve] 	found org.apache.commons#commons-compress;1.10 in public
+[ivy:resolve] 	found com.github.swri-robotics#lz4;1.5.0 in public
+[ivy:resolve] 	found com.google.code.findbugs#jsr305;1.3.9 in public
+[ivy:resolve] 	found ch.qos.logback#logback-classic;1.1.5 in public
+[ivy:resolve] 	found ch.qos.logback#logback-core;1.1.5 in public
+[ivy:resolve] 	found org.apache.commons#commons-lang3;3.10 in public
+[ivy:resolve] 	found org.apache.commons#commons-math3;3.6.1 in public
+[ivy:resolve] 	found org.webjars.npm#semver;5.4.1 in public
+[ivy:resolve] 	found commons-net#commons-net;3.6 in public
+[ivy:resolve] 	found org.apache.directory.studio#org.apache.commons.io;2.4 in public
+[ivy:resolve] 	found commons-io#commons-io;2.4 in public
+[ivy:resolve] 	found findbugs#annotations;1.0.0 in public
+[ivy:resolve] 	found org.apache.commons#commons-text;1.8 in public
+[ivy:resolve] 	found com.google.code.gson#gson;2.8.2 in public
+[ivy:resolve] 	found javax.mail#javax.mail-api;1.6.0 in public
+[ivy:resolve] 	found org.jblas#jblas;1.2.4 in public
+[ivy:resolve] 	found org.scala-saddle#jhdf5;2.9 in public
+[ivy:resolve] 	found org.scala-lang#scala-library;2.9.2 in public
+[ivy:resolve] 	found org.bytedeco.javacpp-presets#hdf5;1.10.1-1.4 in public
+[ivy:resolve] 	found org.bytedeco#javacpp;1.4 in public
+[ivy:resolve] 	found net.java.linoleum#jlfgr;1_0 in public
+[ivy:resolve] 	found com.neuronrobotics#nrjavaserial;3.13.0 in public
+[ivy:resolve] 	found net.java.dev.jna#jna;4.2.2 in public
+[ivy:resolve] 	found net.java.dev.jna#jna-platform;4.2.2 in public
+[ivy:resolve] 	found com.kitfox.svg#svg-salamander;1.0 in public
+[ivy:resolve] 	found org.uncommons.maths#uncommons-maths;1.2.2a in public
+[ivy:resolve] 	found jfree#jcommon;1.0.12 in public
+[ivy:resolve] 	found jfree#jfreechart;1.0.8a in public
+[ivy:resolve] 	found org.tallison#jmatio;1.2 in public
+[ivy:resolve] 	found org.usb4java#usb4java;1.2.0 in public
+[ivy:resolve] 	found org.usb4java#libusb4java;1.2.0 in public
+[ivy:resolve] 	found org.bytedeco.javacpp-presets#opencv;3.2.0-1.3 in public
+[ivy:resolve] 	found org.openpnp#opencv;3.2.0-1 in public
+[ivy:resolve] 	found org.bytedeco#javacv;1.0 in public
+[ivy:resolve] 	found org.bytedeco.javacpp-presets#ffmpeg;2.7.1-1.0 in public
+[ivy:resolve] 	found org.bytedeco.javacpp-presets#flycapture;2.7.3.19-1.0 in public
+[ivy:resolve] 	found org.bytedeco.javacpp-presets#libdc1394;2.2.3-1.0 in public
+[ivy:resolve] 	found org.bytedeco.javacpp-presets#libfreenect;0.5.2-1.0 in public
+[ivy:resolve] 	found org.bytedeco.javacpp-presets#videoinput;0.200-1.0 in public
+[ivy:resolve] 	found org.bytedeco.javacpp-presets#artoolkitplus;2.3.1-1.0 in public
+[ivy:resolve] 	found org.bytedeco.javacpp-presets#flandmark;1.07-1.0 in public
+[ivy:resolve] 	found com.google.android#android;2.2.1 in public
+[ivy:resolve] 	found org.jogamp.jocl#jocl-main;2.0.2 in public
+[ivy:resolve] 	found org.jogamp.jocl#jocl;2.0.2 in public
+[ivy:resolve] 	found junit#junit;4.11 in public
+[ivy:resolve] 	found org.hamcrest#hamcrest-core;1.3 in public
+[ivy:resolve] 	found org.tensorflow#tensorflow;1.14.0 in public
+[ivy:resolve] 	found org.tensorflow#libtensorflow;1.14.0 in public
+[ivy:resolve] 	found org.tensorflow#libtensorflow_jni;1.14.0 in public
+[ivy:resolve] 	found org.tensorflow#libtensorflow_jni_gpu;1.14.0 in public
+[ivy:resolve] 	found com.esotericsoftware.yamlbeans#yamlbeans;1.13 in public
+[ivy:resolve] 	found org.ojalgo#ojalgo;44.0.0 in public
+[ivy:resolve] 	found redis.clients#jedis;2.9.0 in public
+[ivy:resolve] 	found org.apache.commons#commons-pool2;2.4.2 in public
+[ivy:resolve] 	found org.eclipse.jgit#org.eclipse.jgit;5.7.0.202003110725-r in public
+[ivy:resolve] 	found com.jcraft#jsch;0.1.55 in public
+[ivy:resolve] 	found com.jcraft#jzlib;1.1.1 in public
+[ivy:resolve] 	found com.googlecode.javaewah#JavaEWAH;1.1.7 in public
+[ivy:resolve] 	found org.bouncycastle#bcpg-jdk15on;1.64 in public
+[ivy:resolve] 	found org.bouncycastle#bcprov-jdk15on;1.64 in public
+[ivy:resolve] 	found org.bouncycastle#bcpkix-jdk15on;1.64 in public
+[ivy:resolve] 	found org.apache.ant#ant-commons-net;1.10.8 in public
+[ivy:resolve] 	found org.apache.ant#ant;1.10.8 in public
+[ivy:resolve] 	found org.apache.ant#ant-launcher;1.10.8 in public
+[ivy:resolve] 	found org.jetbrains.bio#npy;0.3.3 in spring_lib_m
+[ivy:resolve] 	found org.jetbrains.kotlin#kotlin-stdlib;1.0.7 in public
+[ivy:resolve] 	[1.0.7] org.jetbrains.kotlin#kotlin-stdlib;1.0.+
+[ivy:resolve] 	found org.jetbrains.kotlin#kotlin-runtime;1.0.7 in public
+[ivy:resolve] :: resolution report :: resolve 2997ms :: artifacts dl 74ms
+[ivy:resolve] 	:: evicted modules:
+[ivy:resolve] 	org.apache.commons#commons-lang3;3.9 by [org.apache.commons#commons-lang3;3.10] in [default]
+[ivy:resolve] 	commons-net#commons-net;3.3 by [commons-net#commons-net;3.6] in [default]
+[ivy:resolve] 	org.apache.commons#commons-lang3;3.2.1 by [org.apache.commons#commons-lang3;3.10] in [default]
+[ivy:resolve] 	org.bytedeco#javacpp;1.3 by [org.bytedeco#javacpp;1.4] in [default]
+[ivy:resolve] 	org.bytedeco#javacpp;1.0 by [org.bytedeco#javacpp;1.4] in [default]
+[ivy:resolve] 	org.bytedeco.javacpp-presets#opencv;3.0.0-1.0 by [org.bytedeco.javacpp-presets#opencv;3.2.0-1.3] in [default]
+[ivy:resolve] 	org.jogamp.gluegen#gluegen-rt-main;2.0.2 by [org.jogamp.gluegen#gluegen-rt-main;2.3.2] in [default]
+[ivy:resolve] 	org.jogamp.jogl#jogl-all-main;2.0.2 by [org.jogamp.jogl#jogl-all-main;2.3.2] in [default]
+[ivy:resolve] 	org.slf4j#slf4j-api;1.7.2 by [org.slf4j#slf4j-api;1.7.16] in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   89  |   1   |   0   |   9   ||  161  |   0   |
+	---------------------------------------------------------------------
+[ivy:retrieve] :: retrieving :: org.jaerproject#jaer
+[ivy:retrieve] 	confs: [default]
+[ivy:retrieve] 	0 artifacts copied, 161 already retrieved (0kB/28ms)
+[propertyfile] Updating property file: /home/octo/IdeaProjects/jaer/nbproject/project.properties
+
+-use-ivy-junit:
+
+-pre-init:
+
+-init-private:
+
+-init-user:
+
+-init-project:
+
+-init-macrodef-property:
+
+-do-init:
+
+-post-init:
+
+-init-check:
+
+-init-ap-cmdline-properties:
+
+-init-macrodef-javac-with-processors:
+
+-init-macrodef-javac-without-processors:
+
+-init-macrodef-javac:
+
+-init-macrodef-test-impl:
+
+-init-macrodef-junit-init:
+
+-init-macrodef-junit-single:
+
+-init-test-properties:
+
+-init-macrodef-junit-batch:
+
+-init-macrodef-junit:
+
+-init-macrodef-junit-impl:
+Trying to override old definition of task http://www.netbeans.org/ns/j2se-project/3:test-impl
+
+-init-macrodef-testng:
+
+-init-macrodef-testng-impl:
+
+-init-macrodef-test:
+
+-init-macrodef-junit-debug:
+
+-init-macrodef-junit-debug-batch:
+
+-init-macrodef-junit-debug-impl:
+
+-init-macrodef-test-debug-junit:
+
+-init-macrodef-testng-debug:
+
+-init-macrodef-testng-debug-impl:
+
+-init-macrodef-test-debug-testng:
+
+-init-macrodef-test-debug:
+
+-init-debug-args:
+
+-init-macrodef-nbjpda:
+
+-init-macrodef-debug:
+
+-init-macrodef-java:
+
+-init-presetdef-jar:
+
+-init-ap-cmdline-supported:
+
+-init-ap-cmdline:
+
+init:
+
+-deps-jar-init:
+   [delete] Deleting: /home/octo/IdeaProjects/jaer/build/built-jar.properties
+
+deps-jar:
+
+-warn-already-built-jar:
+[propertyfile] Updating property file: /home/octo/IdeaProjects/jaer/build/built-jar.properties
+
+-check-automatic-build:
+
+-clean-after-automatic-build:
+
+-verify-automatic-build:
+
+-pre-pre-compile:
+
+-pre-compile:
+
+-copy-persistence-xml:
+
+-compile-depend:
+
+-do-compile:
+    [javac] Compiling 1 source file to /home/octo/IdeaProjects/jaer/build/classes
+
+-post-compile:
+
+compile:
+
+jaer-setBuildVersion:
+     [echo] Making build version file build/classes/BUILDVERSION.txt - you can ignore any error 
+     [echo] generated here since it will only affect the Help/About... dialog.
+   [delete] Deleting: /home/octo/IdeaProjects/jaer/build/classes/BUILDVERSION.txt
+   [concat] Built August 2 2020 at 1155 by octo
+   [concat] os.name=Linux
+   [concat] os.version=5.6.17-2-rt9-MANJARO
+   [concat] java.version=1.8.0_252
+   [concat] java.vendor=Oracle Corporation
+   [concat] ":git describe" output: 1.8.1.8
+   [concat] 
+
+jaer-copySplashImage:
+
+-pre-jar:
+     [echo] build.xml project opened
+     [echo]  Having trouble building or running?
+     [echo]             See the jAER user forum at https://groups.google.com/forum/#!forum/jaer-users
+     [echo]         
+
+-pre-pre-jar:
+
+-do-jar-create-manifest:
+
+-do-jar-copy-manifest:
+     [copy] Copying 1 file to /home/octo/IdeaProjects/jaer/build
+
+-do-jar-set-mainclass:
+
+-do-jar-set-profile:
+
+-do-jar-set-splashscreen:
+
+-do-jar-jar:
+[j2seproject1:jar] Building jar: /home/octo/IdeaProjects/jaer/dist/jAER.jar
+     [echo] To run this application from the command line without Ant, try:
+     [echo] /usr/lib/jvm/java-8-openjdk/jre/bin/java -cp /home/octo/IdeaProjects/jaer/jars/USBTransferThread-0.9.6.jar:/home/octo/IdeaProjects/jaer/jars/UsbIoJava.jar:/home/octo/IdeaProjects/jaer/jars/ant.jar:/home/octo/IdeaProjects/jaer/jars/openni2/org.openni.jar:/home/octo/IdeaProjects/jaer/jars/rosjava-0.3.5.jar:/home/octo/IdeaProjects/jaer/jars/message_generation-0.3.0.jar:/home/octo/IdeaProjects/jaer/lib/JavaEWAH-1.1.7.jar:/home/octo/IdeaProjects/jaer/lib/annotations-1.0.0.jar:/home/octo/IdeaProjects/jaer/lib/ant-1.10.8.jar:/home/octo/IdeaProjects/jaer/lib/ant-commons-net-1.10.8-sources.jar:/home/octo/IdeaProjects/jaer/lib/ant-commons-net-1.10.8.jar:/home/octo/IdeaProjects/jaer/lib/ant-launcher-1.10.8.jar:/home/octo/IdeaProjects/jaer/lib/artoolkitplus-2.3.1-1.0.jar:/home/octo/IdeaProjects/jaer/lib/bag-reader-java-1.10.0-javadoc.jar:/home/octo/IdeaProjects/jaer/lib/bag-reader-java-1.10.0-sources.jar:/home/octo/IdeaProjects/jaer/lib/bag-reader-java-1.10.0.jar:/home/octo/IdeaProjects/jaer/lib/bcpg-jdk15on-1.64.jar:/home/octo/IdeaProjects/jaer/lib/bcpkix-jdk15on-1.64.jar:/home/octo/IdeaProjects/jaer/lib/bcprov-jdk15on-1.64.jar:/home/octo/IdeaProjects/jaer/lib/beansbinding-1.2.1.jar:/home/octo/IdeaProjects/jaer/lib/commons-codec-1.10.jar:/home/octo/IdeaProjects/jaer/lib/commons-compress-1.10.jar:/home/octo/IdeaProjects/jaer/lib/commons-io-2.4.jar:/home/octo/IdeaProjects/jaer/lib/commons-lang3-3.10-javadoc.jar:/home/octo/IdeaProjects/jaer/lib/commons-lang3-3.10-sources.jar:/home/octo/IdeaProjects/jaer/lib/commons-lang3-3.10.jar:/home/octo/IdeaProjects/jaer/lib/commons-math3-3.6.1-javadoc.jar:/home/octo/IdeaProjects/jaer/lib/commons-math3-3.6.1-sources.jar:/home/octo/IdeaProjects/jaer/lib/commons-math3-3.6.1.jar:/home/octo/IdeaProjects/jaer/lib/commons-net-3.6-javadoc.jar:/home/octo/IdeaProjects/jaer/lib/commons-net-3.6-sources.jar:/home/octo/IdeaProjects/jaer/lib/commons-net-3.6.jar:/home/octo/IdeaProjects/jaer/lib/commons-pool2-2.4.2.jar:/home/octo/IdeaProjects/jaer/lib/commons-text-1.8-javadoc.jar:/home/octo/IdeaProjects/jaer/lib/commons-text-1.8-sources.jar:/home/octo/IdeaProjects/jaer/lib/commons-text-1.8.jar:/home/octo/IdeaProjects/jaer/lib/ffmpeg-2.7.1-1.0.jar:/home/octo/IdeaProjects/jaer/lib/flandmark-1.07-1.0.jar:/home/octo/IdeaProjects/jaer/lib/flycapture-2.7.3.19-1.0.jar:/home/octo/IdeaProjects/jaer/lib/gluegen-rt-2.3.2-natives-linux-amd64.jar:/home/octo/IdeaProjects/jaer/lib/gluegen-rt-2.3.2-natives-linux-i586.jar:/home/octo/IdeaProjects/jaer/lib/gluegen-rt-2.3.2-natives-macosx-universal.jar:/home/octo/IdeaProjects/jaer/lib/gluegen-rt-2.3.2-natives-solaris-amd64.jar:/home/octo/IdeaProjects/jaer/lib/gluegen-rt-2.3.2-natives-solaris-i586.jar:/home/octo/IdeaProjects/jaer/lib/gluegen-rt-2.3.2-natives-windows-amd64.jar:/home/octo/IdeaProjects/jaer/lib/gluegen-rt-2.3.2-natives-windows-i586.jar:/home/octo/IdeaProjects/jaer/lib/gluegen-rt-2.3.2.jar:/home/octo/IdeaProjects/jaer/lib/gluegen-rt-main-2.3.2-javadoc.jar:/home/octo/IdeaProjects/jaer/lib/gluegen-rt-main-2.3.2-sources.jar:/home/octo/IdeaProjects/jaer/lib/gluegen-rt-main-2.3.2.jar:/home/octo/IdeaProjects/jaer/lib/gson-2.8.2-javadoc.jar:/home/octo/IdeaProjects/jaer/lib/gson-2.8.2-sources.jar:/home/octo/IdeaProjects/jaer/lib/gson-2.8.2.jar:/home/octo/IdeaProjects/jaer/lib/guava-18.0-javadoc.jar:/home/octo/IdeaProjects/jaer/lib/guava-18.0-sources.jar:/home/octo/IdeaProjects/jaer/lib/guava-18.0.jar:/home/octo/IdeaProjects/jaer/lib/hamcrest-core-1.3.jar:/home/octo/IdeaProjects/jaer/lib/hdf5-1.10.1-1.4-linux-x86.jar:/home/octo/IdeaProjects/jaer/lib/hdf5-1.10.1-1.4-linux-x86_64.jar:/home/octo/IdeaProjects/jaer/lib/hdf5-1.10.1-1.4-macosx-x86_64.jar:/home/octo/IdeaProjects/jaer/lib/hdf5-1.10.1-1.4-windows-x86.jar:/home/octo/IdeaProjects/jaer/lib/hdf5-1.10.1-1.4-windows-x86_64.jar:/home/octo/IdeaProjects/jaer/lib/jackson-annotations-2.6.0.jar:/home/octo/IdeaProjects/jaer/lib/jackson-core-2.6.5.jar:/home/octo/IdeaProjects/jaer/lib/jackson-databind-2.6.5.jar:/home/octo/IdeaProjects/jaer/lib/javacpp-1.4.jar:/home/octo/IdeaProjects/jaer/lib/javacv-1.0-javadoc.jar:/home/octo/IdeaProjects/jaer/lib/javacv-1.0-sources.jar:/home/octo/IdeaProjects/jaer/lib/javacv-1.0.jar:/home/octo/IdeaProjects/jaer/lib/javax.mail-api-1.6.0-javadoc.jar:/home/octo/IdeaProjects/jaer/lib/javax.mail-api-1.6.0-sources.jar:/home/octo/IdeaProjects/jaer/lib/javax.mail-api-1.6.0.jar:/home/octo/IdeaProjects/jaer/lib/jblas-1.2.4-javadoc.jar:/home/octo/IdeaProjects/jaer/lib/jblas-1.2.4-sources.jar:/home/octo/IdeaProjects/jaer/lib/jblas-1.2.4.jar:/home/octo/IdeaProjects/jaer/lib/jcommon-1.0.12.jar:/home/octo/IdeaProjects/jaer/lib/jedis-2.9.0-javadoc.jar:/home/octo/IdeaProjects/jaer/lib/jedis-2.9.0-sources.jar:/home/octo/IdeaProjects/jaer/lib/jedis-2.9.0.jar:/home/octo/IdeaProjects/jaer/lib/jfreechart-1.0.8a.jar:/home/octo/IdeaProjects/jaer/lib/jhdf5-2.9-javadoc.jar:/home/octo/IdeaProjects/jaer/lib/jhdf5-2.9-sources.jar:/home/octo/IdeaProjects/jaer/lib/jhdf5-2.9.jar:/home/octo/IdeaProjects/jaer/lib/jlfgr-1_0.jar:/home/octo/IdeaProjects/jaer/lib/jmatio-1.2-javadoc.jar:/home/octo/IdeaProjects/jaer/lib/jmatio-1.2-sources.jar:/home/octo/IdeaProjects/jaer/lib/jmatio-1.2.jar:/home/octo/IdeaProjects/jaer/lib/jna-4.2.2.jar:/home/octo/IdeaProjects/jaer/lib/jna-platform-4.2.2.jar:/home/octo/IdeaProjects/jaer/lib/jocl-2.0.2-natives-windows-i586.jar:/home/octo/IdeaProjects/jaer/lib/jocl-main-2.0.2.jar:/home/octo/IdeaProjects/jaer/lib/jogl-all-2.3.2-natives-linux-amd64.jar:/home/octo/IdeaProjects/jaer/lib/jogl-all-2.3.2-natives-linux-i586.jar:/home/octo/IdeaProjects/jaer/lib/jogl-all-2.3.2-natives-macosx-universal.jar:/home/octo/IdeaProjects/jaer/lib/jogl-all-2.3.2-natives-solaris-amd64.jar:/home/octo/IdeaProjects/jaer/lib/jogl-all-2.3.2-natives-solaris-i586.jar:/home/octo/IdeaProjects/jaer/lib/jogl-all-2.3.2-natives-windows-amd64.jar:/home/octo/IdeaProjects/jaer/lib/jogl-all-2.3.2-natives-windows-i586.jar:/home/octo/IdeaProjects/jaer/lib/jogl-all-2.3.2.jar:/home/octo/IdeaProjects/jaer/lib/jogl-all-main-2.3.2-javadoc.jar:/home/octo/IdeaProjects/jaer/lib/jogl-all-main-2.3.2-sources.jar:/home/octo/IdeaProjects/jaer/lib/jogl-all-main-2.3.2.jar:/home/octo/IdeaProjects/jaer/lib/jsch-0.1.55.jar:/home/octo/IdeaProjects/jaer/lib/jsr305-1.3.9.jar:/home/octo/IdeaProjects/jaer/lib/junit-4.11.jar:/home/octo/IdeaProjects/jaer/lib/jzlib-1.1.1.jar:/home/octo/IdeaProjects/jaer/lib/kotlin-runtime-1.0.7.jar:/home/octo/IdeaProjects/jaer/lib/kotlin-stdlib-1.0.7.jar:/home/octo/IdeaProjects/jaer/lib/libdc1394-2.2.3-1.0.jar:/home/octo/IdeaProjects/jaer/lib/libfreenect-0.5.2-1.0.jar:/home/octo/IdeaProjects/jaer/lib/libtensorflow-1.14.0.jar:/home/octo/IdeaProjects/jaer/lib/libtensorflow_jni-1.14.0.jar:/home/octo/IdeaProjects/jaer/lib/libtensorflow_jni_gpu-1.14.0.jar:/home/octo/IdeaProjects/jaer/lib/libusb4java-1.2.0-linux-arm.jar:/home/octo/IdeaProjects/jaer/lib/libusb4java-1.2.0-linux-x86.jar:/home/octo/IdeaProjects/jaer/lib/libusb4java-1.2.0-linux-x86_64.jar:/home/octo/IdeaProjects/jaer/lib/libusb4java-1.2.0-osx-x86.jar:/home/octo/IdeaProjects/jaer/lib/libusb4java-1.2.0-osx-x86_64.jar:/home/octo/IdeaProjects/jaer/lib/libusb4java-1.2.0-windows-x86.jar:/home/octo/IdeaProjects/jaer/lib/libusb4java-1.2.0-windows-x86_64.jar:/home/octo/IdeaProjects/jaer/lib/logback-classic-1.1.5.jar:/home/octo/IdeaProjects/jaer/lib/logback-core-1.1.5.jar:/home/octo/IdeaProjects/jaer/lib/lz4-1.5.0.jar:/home/octo/IdeaProjects/jaer/lib/npy-0.3.3-sources.jar:/home/octo/IdeaProjects/jaer/lib/npy-0.3.3.jar:/home/octo/IdeaProjects/jaer/lib/nrjavaserial-3.13.0-javadoc.jar:/home/octo/IdeaProjects/jaer/lib/nrjavaserial-3.13.0-sources.jar:/home/octo/IdeaProjects/jaer/lib/nrjavaserial-3.13.0.jar:/home/octo/IdeaProjects/jaer/lib/ojalgo-44.0.0-javadoc.jar:/home/octo/IdeaProjects/jaer/lib/ojalgo-44.0.0-sources.jar:/home/octo/IdeaProjects/jaer/lib/ojalgo-44.0.0.jar:/home/octo/IdeaProjects/jaer/lib/opencv-3.2.0-1-javadoc.jar:/home/octo/IdeaProjects/jaer/lib/opencv-3.2.0-1-sources.jar:/home/octo/IdeaProjects/jaer/lib/opencv-3.2.0-1.3-linux-x86.jar:/home/octo/IdeaProjects/jaer/lib/opencv-3.2.0-1.3-linux-x86_64.jar:/home/octo/IdeaProjects/jaer/lib/opencv-3.2.0-1.3-macosx-x86_64.jar:/home/octo/IdeaProjects/jaer/lib/opencv-3.2.0-1.3-windows-x86.jar:/home/octo/IdeaProjects/jaer/lib/opencv-3.2.0-1.3-windows-x86_64.jar:/home/octo/IdeaProjects/jaer/lib/opencv-3.2.0-1.3.jar:/home/octo/IdeaProjects/jaer/lib/opencv-3.2.0-1.jar:/home/octo/IdeaProjects/jaer/lib/org.apache.commons.io-2.4-sources.jar:/home/octo/IdeaProjects/jaer/lib/org.apache.commons.io-2.4.jar:/home/octo/IdeaProjects/jaer/lib/org.eclipse.jgit-5.7.0.202003110725-r-javadoc.jar:/home/octo/IdeaProjects/jaer/lib/org.eclipse.jgit-5.7.0.202003110725-r-sources.jar:/home/octo/IdeaProjects/jaer/lib/org.eclipse.jgit-5.7.0.202003110725-r.jar:/home/octo/IdeaProjects/jaer/lib/scala-library-2.9.2.jar:/home/octo/IdeaProjects/jaer/lib/semver-5.4.1-javadoc.jar:/home/octo/IdeaProjects/jaer/lib/semver-5.4.1-sources.jar:/home/octo/IdeaProjects/jaer/lib/semver-5.4.1.jar:/home/octo/IdeaProjects/jaer/lib/slf4j-api-1.7.16.jar:/home/octo/IdeaProjects/jaer/lib/svg-salamander-1.0-javadoc.jar:/home/octo/IdeaProjects/jaer/lib/svg-salamander-1.0-sources.jar:/home/octo/IdeaProjects/jaer/lib/svg-salamander-1.0.jar:/home/octo/IdeaProjects/jaer/lib/swing-layout-1.0.3-javadoc.jar:/home/octo/IdeaProjects/jaer/lib/swing-layout-1.0.3-sources.jar:/home/octo/IdeaProjects/jaer/lib/swing-layout-1.0.3.jar:/home/octo/IdeaProjects/jaer/lib/tensorflow-1.14.0.jar:/home/octo/IdeaProjects/jaer/lib/uncommons-maths-1.2.2a-javadoc.jar:/home/octo/IdeaProjects/jaer/lib/uncommons-maths-1.2.2a-sources.jar:/home/octo/IdeaProjects/jaer/lib/uncommons-maths-1.2.2a.jar:/home/octo/IdeaProjects/jaer/lib/usb4java-1.2.0-javadoc.jar:/home/octo/IdeaProjects/jaer/lib/usb4java-1.2.0-sources.jar:/home/octo/IdeaProjects/jaer/lib/usb4java-1.2.0.jar:/home/octo/IdeaProjects/jaer/lib/videoinput-0.200-1.0.jar:/home/octo/IdeaProjects/jaer/lib/yamlbeans-1.13-javadoc.jar:/home/octo/IdeaProjects/jaer/lib/yamlbeans-1.13-sources.jar:/home/octo/IdeaProjects/jaer/lib/yamlbeans-1.13.jar:/home/octo/IdeaProjects/jaer/jars/tools.jar:/home/octo/IdeaProjects/jaer/dist/jAER.jar net.sf.jaer.JAERViewer
+
+-init-macrodef-copylibs:
+
+-do-jar-copylibs:
+
+-do-jar-delete-manifest:
+
+-do-jar-without-libraries:
+
+-do-jar-with-libraries:
+
+jaer-exe4j:
+     [echo] Building Windows .exe. launchers using exe4j (https://www.ej-technologies.com/download/exe4j/files). 
+     [echo]  Note that depending on 32- or 64-bit installed JDKs, 
+     [echo]  you may not be able to build one or the other of these launchers. 
+     [echo]  Don't worry about this.
+
+checkos:
+
+jaer-exe4jx64:
+
+-post-jar:
+
+-do-jar:
+
+-check-filename-prop:
+
+-set-jnlp-filename-custom:
+
+-set-jnlp-filename-default:
+
+-init-filename:
+
+-test-jnlp-enabled:
+
+-create-tmp-manifest:
+
+-copy-tmp-manifest:
+
+-security-props-check:
+
+-test-signjars-task-available:
+
+-unavailable-signjars-task:
+     [echo] Task required to sign JAR file is missing, probably the library 'JWS Ant Tasks' is missing either from shared folder or from IDE installation. JAR files will not be signed.
+
+-check-signing-possible:
+
+-set-mixed-code-properties:
+
+-init-macrodef-extend-manifest:
+
+-add-trusted-only-attribute:
+
+-add-trusted-library-attribute:
+
+-check-manifest-codebase:
+
+-extend-manifest-codebase-copy:
+
+-extend-manifest-codebase-web:
+
+-extend-manifest-codebase-other:
+
+-extend-manifest-codebase-override-warning:
+
+-extend-manifest-codebase-override:
+
+-check-manifest-permissions:
+
+-extend-manifest-permissions-sandbox:
+
+-extend-manifest-permissions-all:
+
+-extend-manifest-permissions-override:
+
+-extend-manifest-application-name:
+
+-check-manifest-application-library-allowable-codebase:
+
+-extend-manifest-application-library-allowable-codebase-copy:
+
+-extend-manifest-application-library-allowable-codebase-web:
+
+-extend-manifest-application-library-allowable-codebase-other:
+
+-extend-manifest-application-library-allowable-codebase-override-warning:
+
+-extend-manifest-application-library-allowable-codebase-override:
+
+-check-manifest-caller-allowable-codebase:
+
+-extend-manifest-caller-allowable-codebase-copy:
+
+-extend-manifest-caller-allowable-codebase-web:
+
+-extend-manifest-caller-allowable-codebase-other:
+
+-extend-manifest-caller-allowable-codebase-override-warning:
+
+-extend-manifest-caller-allowable-codebase-override:
+
+-add-manifest-security:
+
+-test-jnlp-type:
+
+-do-jar-applet:
+
+-do-jar-jnlp-application:
+
+-do-jar-jnlp-component:
+
+-do-jar-jnlp:
+
+jnlp:
+
+jar:
+
+default:
+
+BUILD SUCCESSFUL
+Total time: 7 seconds
