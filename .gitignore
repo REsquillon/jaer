@@ -4,3 +4,5 @@
 /lib
 /ivy
 /jars unused/**
+/.idea
+/*.iml
