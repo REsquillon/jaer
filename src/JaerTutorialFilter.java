@@ -9,7 +9,9 @@ import net.sf.jaer.event.EventPacket;
 import net.sf.jaer.eventprocessing.EventFilter2D;
 import net.sf.jaer.graphics.FrameAnnotater;
 
-
+/*
+    Hello
+ */
 /**
  * example of a lowpass average event location
  * @author Tobi
