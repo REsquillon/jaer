@@ -6,3 +6,6 @@
 /jars unused/**
 /.idea
 /*.iml
+/*.log
+
+nbproject/
