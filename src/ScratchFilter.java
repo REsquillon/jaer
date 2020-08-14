@@ -5,6 +5,7 @@ import net.sf.jaer.event.BasicEvent;
 import net.sf.jaer.event.EventPacket;
 import net.sf.jaer.eventprocessing.EventFilter2D;
 import net.sf.jaer.graphics.FrameAnnotater;
+import org.opencv.aruco.Aruco;
 import org.opencv.core.Mat;
 import org.opencv.core.Scalar;
 import org.opencv.core.Size;
@@ -16,6 +17,7 @@ public class ScratchFilter extends EventFilter2D implements FrameAnnotater {
     // TODO: How do you obtain these dynamically?
     private int CHIP_WIDTH = 346;
     private int CHIP_HEIGHT = 260;
+    private Aruco usage_class = new Aruco();
 
     private int kDim = 4;
     private int ptSize = 2;
