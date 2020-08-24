@@ -9,6 +9,7 @@
         <option name="sourcesTypes" value="source, src, sources, srcs" />
       </ArtifactTypeSettings>
     </option>
+<<<<<<< HEAD
     <option name="ivyLogLevelThreshold" value="Verbose" />
     <option name="ivySettingsFile" value="$PROJECT_DIR$/ivysettings.xml" />
   </component>
@@ -16,6 +17,12 @@
 =======
   <component name="ProjectRootManager">
 >>>>>>> parent of a1ad8f3... Fixing build process; adding back nbproject
+=======
+    <option name="ivyLogLevelThreshold" value="Info" />
+    <option name="ivySettingsFile" value="$PROJECT_DIR$/ivysettings.xml" />
+  </component>
+  <component name="ProjectRootManager">
+>>>>>>> master
     <output url="file://$PROJECT_DIR$/classes" />
   </component>
 </project>
