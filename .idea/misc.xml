@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
   <component name="IvyIDEA.ProjectSettings">
     <option name="artifactTypeSettings">
       <ArtifactTypeSettings>
@@ -12,6 +13,9 @@
     <option name="ivySettingsFile" value="$PROJECT_DIR$/ivysettings.xml" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+=======
+  <component name="ProjectRootManager">
+>>>>>>> parent of a1ad8f3... Fixing build process; adding back nbproject
     <output url="file://$PROJECT_DIR$/classes" />
   </component>
 </project>
