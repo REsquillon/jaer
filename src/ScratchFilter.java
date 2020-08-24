@@ -5,24 +5,110 @@ import net.sf.jaer.event.BasicEvent;
 import net.sf.jaer.event.EventPacket;
 import net.sf.jaer.eventprocessing.EventFilter2D;
 import net.sf.jaer.graphics.FrameAnnotater;
-import org.opencv.aruco.Aruco;
-import org.opencv.core.Mat;
-import org.opencv.core.Scalar;
-import org.opencv.core.Size;
-import org.opencv.imgproc.Imgproc;
+import org.opencv.core.*;
 
-import static org.bytedeco.javacpp.opencv_core.CV_8UC1;
+import java.util.ArrayList;
+
+import static org.opencv.core.CvType.CV_8UC1;
+import static org.opencv.imgproc.Imgproc.*;
+
+// TODO: Implement buffering of threshold data
+
+// TODO: Implement buffering of event frame data
+// TODO: Parse event data into ArUco functions and see what the heck happens
+// TODO: Simple marker annotation at centroid
+
+// Buffer "memory" will be implemented through pixel decay
 
 public class ScratchFilter extends EventFilter2D implements FrameAnnotater {
-    // TODO: How do you obtain these dynamically?
+    static {
+        try {
+            System.loadLibrary(Core.NATIVE_LIBRARY_NAME); // Load in the appropriate OpenCV library
+        } catch (UnsatisfiedLinkError e) {
+            System.err.println("Native OpenCV library failed to load.\n" + e);
+        }
+    }
+
+    private boolean hasSaved = false;
+
+    // TODO: How do you obtain these dynamically for different devices?
+    // Currently set to the DAVIS-346 dimensions
     private int CHIP_WIDTH = 346;
     private int CHIP_HEIGHT = 260;
-    private Aruco usage_class = new Aruco();
 
-    private int kDim = 4;
-    private int ptSize = 2;
+    private boolean thresholdOn = true;
+    private boolean contoursOn = true;
 
+    final private Mat postBuffer = new Mat(CHIP_WIDTH, CHIP_HEIGHT, CV_8UC1, new Scalar(0));
     final private Mat buffer = new Mat(CHIP_WIDTH, CHIP_HEIGHT, CV_8UC1, new Scalar(0));
+
+    private int bufferCycleLength = 20; // for specifying whole frame retention
+    private int thresh = 30; // pixel filtering threshold
+    private int kdim = 3;
+    private int ptSize = 2;
+    private int cannyMax = 255;
+    private int cannyMin = 0;
+
+    public void doToggleContours() {
+        contoursOn = !contoursOn;
+    }
+
+    public void setCannyMin(int cannyMin) {
+        this.cannyMin = cannyMin;
+    }
+
+    public int getCannyMin() {
+        return cannyMin;
+    }
+
+    public void setCannyMax(int cannyMax) {
+        this.cannyMax = cannyMax;
+    }
+
+    public int getCannyMax() {
+        return cannyMax;
+    }
+
+    private float sigma = getFloat("sigma",1f); // Can't see this entry in the GUI
+
+    public float getSigma(){
+        return sigma;
+    }
+
+    public void setFloatProperty(final float NewFloat) { // TODO: get this showing up in the UI
+        putFloat("sigma",NewFloat);
+        float OldValue = this.sigma;
+        this.sigma = NewFloat;
+        support.firePropertyChange("sigma",OldValue,NewFloat);
+    }
+
+    public void doToggleThreshold() {
+        thresholdOn = !thresholdOn;
+    }
+
+    public void setThresh(int thresh) {
+        this.thresh = thresh;
+    }
+
+    public int getThresh() {
+        return thresh;
+    }
+
+    public void setKdim(int kdim) {
+        this.kdim = kdim;
+    }
+
+    public int getKdim() {
+        return kdim;
+    }
+
+    public int getBufferCycleLength() {
+        return bufferCycleLength;
+    }
+
+    public void setBufferCycleLength(int bufferCycleLength) {
+        this.bufferCycleLength = bufferCycleLength;
+    }
 
     public int getPtSize() {
         return ptSize;
@@ -32,29 +118,41 @@ public class ScratchFilter extends EventFilter2D implements FrameAnnotater {
         this.ptSize = ptSize;
     }
 
-    public int getkDim() {
-        return kDim;
-    }
-
-    public void setkDim(int kDim) {
-        this.kDim = kDim;
-    }
-
-        /**
+    /**
      * Subclasses should call this super initializer
      *
      * @param chip
      */
     public ScratchFilter(AEChip chip) {
         super(chip);
+        /* // Do these even work in this context?
+        CHIP_WIDTH = chip.getSizeX();
+        CHIP_HEIGHT = chip.getSizeY();
+         */
     }
 
     @Override
     public EventPacket<?> filterPacket(EventPacket<?> in) {
-        buffer.setTo(new Scalar(0));
+
+        // TODO: This decay method isn't going to work with the new byte config stuff. Will have to reformulate.
+        byte decayDelta = (byte) (255 / bufferCycleLength);
+
+        for (int i = 0; i < CHIP_WIDTH; i++) {
+            for (int j = 0; j < CHIP_HEIGHT; j++) {
+                byte[] temp = new byte[1];
+                buffer.get(i,j,temp);
+
+                if (true || temp[0] - 1 < 0) {
+                    buffer.put(i,j,0);
+                } else {
+                    buffer.put(i,j,temp[0] - decayDelta);
+                }
+            }
+        }
 
         for (BasicEvent ev: in) {
-            buffer.put(ev.getX(), ev.getY(), new byte[]{(byte) 255});
+            // `byte` is interpreted as signed in Java. -ve values occur for 127 > n
+            buffer.put(ev.getX(), ev.getY(), new byte[]{(byte) 100});
         }
 
         return in;
@@ -76,23 +174,79 @@ public class ScratchFilter extends EventFilter2D implements FrameAnnotater {
         gl.glPushMatrix();
 
         gl.glPointSize(ptSize);
-        gl.glBegin(GL2.GL_POINTS);
 
-        Mat out = Mat.zeros(buffer.size(), CV_8UC1);
-        Imgproc.blur(buffer, out, new Size(kDim,kDim));
+        // blank background
+        gl.glBegin(GL2.GL_QUADS);
+        gl.glColor3f(1,1, 1);
+        gl.glVertex2d(0, 0); // bottom left
+        gl.glVertex2d(0, CHIP_HEIGHT); // top left
+        gl.glVertex2d(CHIP_WIDTH, CHIP_HEIGHT); // top right
+        gl.glVertex2d(CHIP_WIDTH, 0); // bottom right
+        gl.glEnd();
+
+        Mat out = buffer.clone();
+        // TODO: Warn user in a tooltip that an even kdim will be converted to kdim + 1
+        if (kdim % 2 == 0) { kdim = kdim + 1; }
+        GaussianBlur(out, out, new Size(kdim,kdim), 0, 0, Core.BORDER_DEFAULT);
+        // blur(out, out, new Size(kdim,kdim));
+
+        if (thresholdOn) {
+            threshold(out, out, thresh, 255, ADAPTIVE_THRESH_MEAN_C);
+        }
+
+        Canny(out, out, cannyMin, cannyMax); // (20,85) seems to work pretty well
+
+        /* Hoping that this works some day...
+        java.util.List<Mat> corners = new ArrayList<>();
+        Mat ids = new Mat();
+        Dictionary dic = Aruco.getPredefinedDictionary(Aruco.DICT_6X6_250);
+        Aruco.detectMarkers(out, dic, corners, ids);
+        Mat drawn = buffer.clone().setTo(new Scalar(0));
+        Aruco.drawDetectedMarkers(drawn, corners, ids);
+         */
+
+        gl.glBegin(GL2.GL_POINTS);
 
         for (int i = 0; i < CHIP_WIDTH; i++) {
             for (int j = 0; j < CHIP_HEIGHT; j++) {
                 byte[] temp = new byte[1];
-                out.get(i, j, temp);
+                out.get(i,j,temp);
 
-                if (temp[0] > 0) {
-                    gl.glColor3f(0, 1f - temp[0] / 255f,0);
+                if ((temp[0] & 0xFF) > 0) {
+                    float level = 1f - ((float) temp[0]) / 100f;
+                    gl.glColor3f(level,0,0);
                     gl.glVertex2d(i, j);
                 }
             }
         }
 
+        gl.glEnd();
+
+        gl.glBegin(GL2.GL_POINTS);
+
+        if (contoursOn) {
+            java.util.List<MatOfPoint> contours = new ArrayList<>();
+            Mat hierarchy = new Mat();
+            findContours(out, contours, hierarchy, RETR_TREE, CHAIN_APPROX_SIMPLE);
+            Mat contourOut = Mat.zeros(out.size(), CV_8UC1);
+            for (int i = 0; i < contours.size(); i++) {
+                // Contours currently form way too tightly around noise. Mitigate this somehow
+                drawContours(contourOut, contours, i, new Scalar(255), 1, LINE_8, hierarchy, 0, new Point());
+            }
+
+            for (int i = 0; i < CHIP_WIDTH; i++) {
+                for (int j = 0; j < CHIP_HEIGHT; j++) {
+                    byte[] temp = new byte[1];
+                    contourOut.get(i,j,temp);
+
+                    if ((temp[0] & 0xFF) > 0) {
+                        float level = 1f - ((float) temp[0]) / 100f;
+                        gl.glColor3f(0,0,level);
+                        gl.glVertex2d(i, j);
+                    }
+                }
+            }
+        }
 
         gl.glEnd();
 
